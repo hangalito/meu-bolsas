@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Meu Bolsas</string>
+    <string name="welcome_title">Welcome to Meu Bolsas</string>
+    <string name="welcome_message">Somos o seu balcão único para todas as coisas de bolsas. Se você está procurando uma bolsa nova para o dia a dia, uma bolsa para ocasiões especiais ou uma bolsa de viagem, temos a bolsa perfeita para você. Oferecemos uma grande variedade de bolsas das principais marcas e oferecemos ótimas ofertas em todas as nossas bolsas.Compre nossa promoção de bolsas hoje e economize até 50%</string>
+    <string name="suggestions">Suggestions</string>
+
+    <!--  Bags names  -->
+    <string name="bag_1">White Balenciaga</string>
+    <string name="bag_2">White Louis Vuitton</string>
+    <string name="bag_3">Pink Chanel</string>
+    <string name="bag_4">Red Louis Vuitton</string>
+    <string name="bag_5">White cross-body Balenciaga</string>
+    <string name="bag_6">Yellow Mickey Mouse cross-body</string>
+    <string name="bag_7">Yellow YSL bag kit</string>
+    <string name="bag_8">Maroon Gucci classic style</string>
+    <string name="bag_9">Cream Chanel cross-body</string>
+    <string name="bag_10">White &amp; Gray Cristian Dior hand bag</string>
+    <string name="bag_11">Unknown brand white bag</string>
+    <string name="bag_12">Pink cross-body Chanel</string>
+    <string name="bag_13">Yellow YSL bag kit</string>
+    <string name="bag_14">Blue YSL</string>
+    <string name="bag_15">Red Louis Vuitton</string>
+    <string name="bag_16">Yellow Mickey Mouse like</string>
+    <string name="bag_17">Classic Gucci</string>
+    <string name="bag_18">Cristian Dior hand bag</string>
+    <string name="bag_19">Maroon Channel cross-body</string>
+    <string name="bag_20">White Louis Vuitton</string>
+    <string name="bag_21">Cream Balenciaga front view</string>
+</resources>

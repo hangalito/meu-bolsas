@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Meu Bolsas</string>
+    <string name="welcome_title">Bem Vindo à Meu Bolsas</string>
+    <string name="welcome_message">Somos o seu balcão único para todas as coisas de bolsas. Se você está procurando uma bolsa nova para o dia a dia, uma bolsa para ocasiões especiais ou uma bolsa de viagem, temos a bolsa perfeita para você. Oferecemos uma grande variedade de bolsas das principais marcas e oferecemos ótimas ofertas em todas as nossas bolsas.Compre nossa promoção de bolsas hoje e economize até 50%</string>
+    <string name="suggestions">Sugestões</string>
+
+    <!--  Nome das bolsas  -->
+    <string name="bag_1">Balenciaga branca</string>
+    <string name="bag_2">Louis Vuitton branca</string>
+    <string name="bag_3">Chanel cor-de-rosa</string>
+    <string name="bag_4">Louis Vuitton vermelha</string>
+    <string name="bag_5">Balenciaga branca cross-body</string>
+    <string name="bag_6">Mickey Mouse cross-body amarela</string>
+    <string name="bag_7">Kit de bolsas YSL amarela</string>
+    <string name="bag_8">Gucci marron estilo clássico</string>
+    <string name="bag_9">Chanel creme cross-body</string>
+    <string name="bag_10">Bolsa de mão Cristian Dior B&amp;S</string>
+    <string name="bag_11">Bolsa branca de marca desconhecida</string>
+    <string name="bag_12">Chanel cross-body rosa</string>
+    <string name="bag_13">Kit de bolsas YSL amarela</string>
+    <string name="bag_14">YSL azul</string>
+    <string name="bag_15">Louis Vuitton vermelha</string>
+    <string name="bag_16">Mickey Mouse amarela</string>
+    <string name="bag_17">Gucci clássica</string>
+    <string name="bag_18">Bolsa de mão Cristian Dior</string>
+    <string name="bag_19">Channel marron cross-body</string>
+    <string name="bag_20">Louis Vuitton branca</string>
+    <string name="bag_21">Balenciaga creme de frente</string>
+</resources>
