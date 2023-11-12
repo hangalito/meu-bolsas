@@ -32,6 +32,10 @@
         "source": "com.meubolsas.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.meubolsas.app-merged_res-44:/drawable_ic_activity.xml.flat",
+        "source": "com.meubolsas.app-main-46:/drawable/ic_activity.xml"
+    },
+    {
         "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_18.png.flat",
         "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_18.png"
     },

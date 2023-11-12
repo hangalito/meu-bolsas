@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "com.meubolsas"
-        minSdk = 26
+        minSdk = 28
         targetSdk = 34
         versionCode = 2
-        versionName = "2.0.0"
+        versionName = "2.4.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

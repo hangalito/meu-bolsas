@@ -6,6 +6,8 @@
     <string name="new_favorite">Bolsa %s adicionada aos favoritos</string>
     <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %s no Meu Bolsas</string>
     <string name="share_title">Partilhar bolsa</string>
+    <string name="wish_List">Lista de desejo</string>
+    <string name="activities">Actividades</string>
 
     <!--  Nome das bolsas  -->
     <string name="bag_1">Balenciaga branca</string>
@@ -42,4 +44,7 @@
     <string name="yellow">Amarela</string>
     <string name="white">Branca</string>
     <string name="none">N/A</string>
+    <string name="bag">Bolsa</string>
+    <string name="time_saved">Data</string>
+    <string name="nothing_saved">Sem itens.</string>
 </resources>

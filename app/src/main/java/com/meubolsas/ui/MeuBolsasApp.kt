@@ -43,7 +43,9 @@ import androidx.compose.ui.unit.dp
 import com.meubolsas.R
 import com.meubolsas.data.Bags
 import com.meubolsas.model.Bag
+import com.meubolsas.model.Favorite
 import com.meubolsas.ui.theme.MeuBolsasTheme
+import java.util.Locale
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -59,6 +61,7 @@ fun MeuBolsasApp(
     val bags = rememberSaveable { Bags.bags().shuffled() }
     val suggestions = rememberSaveable { Bags.suggestions() }
     var selectedBag: Bag? by rememberSaveable { mutableStateOf(null) }
+    val favorites = rememberSaveable { mutableListOf<Favorite>() }
 
     Box(modifier = modifier.fillMaxSize()) {
         val bottomPadding = 50.dp
@@ -94,7 +97,20 @@ fun MeuBolsasApp(
                     if (selectedBag != null) {
                         BagInfo(
                             bag = selectedBag!!,
-                            onActionFavorite = { sel -> actionFavorite(sel.name) },
+                            onActionFavorite = { sel ->
+                                val now = java.time.LocalTime.now()
+                                val time = String.format(
+                                    Locale.getDefault(),
+                                    "${now.hour}:${now.minute}:${now.second}"
+                                )
+                                actionFavorite(sel.name)
+                                favorites.add(
+                                    Favorite(
+                                        sel.name,
+                                        saved = time
+                                    )
+                                )
+                            },
                             onActionShare = { sel -> actionShare(sel) }
                         )
                     } else {
@@ -135,7 +151,11 @@ fun MeuBolsasApp(
                     }
                 }
 
-                profile -> {}
+                profile -> {
+                    Column(modifier = Modifier.fillMaxSize()) {
+                        ProfileScreen(favorites, { fave -> favorites.remove(fave) })
+                    }
+                }
             }
         }
         Card(
@@ -219,6 +239,6 @@ fun ToggleNavButton(
 @Composable
 fun MeuBolsasScreenPreview() {
     MeuBolsasTheme {
-        MeuBolsasApp({},{})
+        MeuBolsasApp({}, {})
     }
 }

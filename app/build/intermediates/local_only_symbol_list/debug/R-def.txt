@@ -28,12 +28,15 @@ drawable bag_6
 drawable bag_7
 drawable bag_8
 drawable bag_9
+drawable ic_activity
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+string activities
 string app_name
+string bag
 string bag_1
 string bag_10
 string bag_11
@@ -63,6 +66,7 @@ string cream
 string marron
 string new_favorite
 string none
+string nothing_saved
 string our_bags
 string pink
 string price
@@ -70,9 +74,11 @@ string red
 string share_bag
 string share_title
 string suggestions
+string time_saved
 string welcome_message
 string welcome_title
 string white
+string wish_List
 string yellow
 style Theme.MeuBolsas
 xml backup_rules

@@ -74,6 +74,7 @@ drawable bag_6
 drawable bag_7
 drawable bag_8
 drawable bag_9
+drawable ic_activity
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -195,8 +196,10 @@ layout notification_template_part_time
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+string activities
 string androidx_startup
 string app_name
+string bag
 string bag_1
 string bag_10
 string bag_11
@@ -245,6 +248,7 @@ string navigation_menu
 string new_favorite
 string none
 string not_selected
+string nothing_saved
 string off
 string on
 string our_bags
@@ -261,9 +265,11 @@ string suggestions
 string switch_role
 string tab
 string template_percent
+string time_saved
 string welcome_message
 string welcome_title
 string white
+string wish_List
 string yellow
 style DialogWindowTheme
 style FloatingDialogTheme
