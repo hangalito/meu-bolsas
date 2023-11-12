@@ -3,6 +3,9 @@
     <string name="welcome_title">Welcome to Meu Bolsas</string>
     <string name="welcome_message">Somos o seu balcão único para todas as coisas de bolsas. Se você está procurando uma bolsa nova para o dia a dia, uma bolsa para ocasiões especiais ou uma bolsa de viagem, temos a bolsa perfeita para você. Oferecemos uma grande variedade de bolsas das principais marcas e oferecemos ótimas ofertas em todas as nossas bolsas.Compre nossa promoção de bolsas hoje e economize até 50%</string>
     <string name="suggestions">Suggestions</string>
+    <string name="new_favorite">Bag %s added to favorites</string>
+    <string name="share_bag">Found bag %s color %s at price of %s on Meu Bolsas</string>
+    <string name="share_title">Share bag</string>
 
     <!--  Bags names  -->
     <string name="bag_1">White Balenciaga</string>
@@ -26,4 +29,17 @@
     <string name="bag_19">Maroon Channel cross-body</string>
     <string name="bag_20">White Louis Vuitton</string>
     <string name="bag_21">Cream Balenciaga front view</string>
+    <string name="our_bags">Our bags</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="color">Color</string>
+    <string name="bw"><![CDATA[Black & White]]></string>
+    <string name="blue">Blue</string>
+    <string name="cream">Cream</string>
+    <string name="marron">Marron</string>
+    <string name="pink">Pink</string>
+    <string name="red">Red</string>
+    <string name="yellow">Yellow</string>
+    <string name="white">White</string>
+    <string name="none">N/A</string>
 </resources>

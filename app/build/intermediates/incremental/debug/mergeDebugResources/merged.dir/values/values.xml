@@ -126,6 +126,9 @@
     <string name="bag_7">Yellow YSL bag kit</string>
     <string name="bag_8">Maroon Gucci classic style</string>
     <string name="bag_9">Cream Chanel cross-body</string>
+    <string name="blue">Blue</string>
+    <string name="brand">Brand</string>
+    <string name="bw"><![CDATA[Black & White]]></string>
     <string name="call_notification_answer_action">Answer</string>
     <string name="call_notification_answer_video_action">Video</string>
     <string name="call_notification_decline_action">Decline</string>
@@ -136,6 +139,8 @@
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
     <string name="collapsed">Collapsed</string>
+    <string name="color">Color</string>
+    <string name="cream">Cream</string>
     <string name="default_error_message">"Invalid input"</string>
     <string name="default_popup_window_title" ns1:ignore="ExtraTranslation">"Pop-Up Window"</string>
     <string name="dialog">"Dialog"</string>
@@ -143,13 +148,22 @@
     <string name="expanded">Expanded</string>
     <string name="in_progress">In progress</string>
     <string name="indeterminate">Partially checked</string>
+    <string name="marron">Marron</string>
     <string name="navigation_menu">"Navigation menu"</string>
+    <string name="new_favorite">Bag %s added to favorites</string>
+    <string name="none">N/A</string>
     <string name="not_selected">Not selected</string>
     <string name="off">Off</string>
     <string name="on">On</string>
+    <string name="our_bags">Our bags</string>
+    <string name="pink">Pink</string>
+    <string name="price">Price</string>
     <string name="range_end">"Range end"</string>
     <string name="range_start">"Range start"</string>
+    <string name="red">Red</string>
     <string name="selected">Selected</string>
+    <string name="share_bag">Found bag %s color %s at price of %s on Meu Bolsas</string>
+    <string name="share_title">Share bag</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="suggestions">Suggestions</string>
     <string name="switch_role">Switch</string>
@@ -157,6 +171,8 @@
     <string name="template_percent"><ns2:g id="percentage">%1$d</ns2:g> percent.</string>
     <string name="welcome_message">Somos o seu balcão único para todas as coisas de bolsas. Se você está procurando uma bolsa nova para o dia a dia, uma bolsa para ocasiões especiais ou uma bolsa de viagem, temos a bolsa perfeita para você. Oferecemos uma grande variedade de bolsas das principais marcas e oferecemos ótimas ofertas em todas as nossas bolsas.Compre nossa promoção de bolsas hoje e economize até 50%</string>
     <string name="welcome_title">Welcome to Meu Bolsas</string>
+    <string name="white">White</string>
+    <string name="yellow">Yellow</string>
     <style name="DialogWindowTheme">
         <item name="android:windowClipToOutline">false</item>
     </style>
