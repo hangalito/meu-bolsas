@@ -1,5 +1,6 @@
 package com.meubolsas.ui
 
+import android.icu.text.SimpleDateFormat
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -44,14 +45,16 @@ import com.meubolsas.R
 import com.meubolsas.data.Bags
 import com.meubolsas.model.Bag
 import com.meubolsas.model.Favorite
+import com.meubolsas.model.UserActivity
 import com.meubolsas.ui.theme.MeuBolsasTheme
+import java.util.Calendar
 import java.util.Locale
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MeuBolsasApp(
-    actionFavorite: (Int) -> Unit,
+    actionFavorite: (String) -> Unit,
     actionShare: (Bag) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -62,6 +65,7 @@ fun MeuBolsasApp(
     val suggestions = rememberSaveable { Bags.suggestions() }
     var selectedBag: Bag? by rememberSaveable { mutableStateOf(null) }
     val favorites = rememberSaveable { mutableListOf<Favorite>() }
+    val userActivities = rememberSaveable { mutableListOf<UserActivity>() }
 
     Box(modifier = modifier.fillMaxSize()) {
         val bottomPadding = 50.dp
@@ -95,21 +99,28 @@ fun MeuBolsasApp(
 
                 shop -> {
                     if (selectedBag != null) {
+                        val msg = selectedBag?.name?.let {
+                            stringResource(
+                                R.string.fav_added,
+                                stringResource(id = it)
+                            )
+                        }
                         BagInfo(
                             bag = selectedBag!!,
-                            onActionFavorite = { sel ->
+                            onActionFavorite = { name ->
                                 val now = java.time.LocalTime.now()
                                 val time = String.format(
                                     Locale.getDefault(),
                                     "${now.hour}:${now.minute}:${now.second}"
                                 )
-                                actionFavorite(sel.name)
-                                favorites.add(
-                                    Favorite(
-                                        sel.name,
-                                        saved = time
-                                    )
-                                )
+                                val calendar = Calendar.getInstance()
+                                val currentDateTime = calendar.timeInMillis
+                                val simpleDateFormat =
+                                    SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault())
+                                val formattedString = simpleDateFormat.format(currentDateTime)
+                                actionFavorite(name)
+                                favorites.add(Favorite(name, time))
+                                userActivities.add(UserActivity(msg!!, formattedString))
                             },
                             onActionShare = { sel -> actionShare(sel) }
                         )
@@ -153,7 +164,10 @@ fun MeuBolsasApp(
 
                 profile -> {
                     Column(modifier = Modifier.fillMaxSize()) {
-                        ProfileScreen(favorites, { fave -> favorites.remove(fave) })
+                        ProfileScreen(
+                            faves = favorites,
+                            listOfActivity = userActivities,
+                            onItemDelete = { fave -> favorites.remove(fave) })
                     }
                 }
             }

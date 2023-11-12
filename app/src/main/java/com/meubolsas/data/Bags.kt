@@ -171,7 +171,7 @@ class Bags {
         fun suggestions(): List<Bag> {
             val suggestedBugs = mutableSetOf<Bag>()
 
-            for (i in 0..10) {
+            for (i in 0..12) {
                 val sel = bags().random()
                 if (sel.price <= 10_000)
                     suggestedBugs.add(sel)

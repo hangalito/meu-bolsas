@@ -241,11 +241,14 @@ string default_popup_window_title
 string dialog
 string dropdown_menu
 string expanded
+string fav_added
+string fav_removed
 string in_progress
 string indeterminate
 string marron
 string navigation_menu
 string new_favorite
+string no_activities
 string none
 string not_selected
 string nothing_saved

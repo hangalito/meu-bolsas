@@ -8,6 +8,8 @@
     <string name="share_title">Partilhar bolsa</string>
     <string name="wish_List">Lista de desejo</string>
     <string name="activities">Actividades</string>
+    <string name="fav_added">%s adicionada à lista de desejo.</string>
+    <string name="fav_removed">%s removida da lista de desejo.</string>
 
     <!--  Nome das bolsas  -->
     <string name="bag_1">Balenciaga branca</string>
@@ -47,4 +49,5 @@
     <string name="bag">Bolsa</string>
     <string name="time_saved">Data</string>
     <string name="nothing_saved">Sem itens.</string>
+    <string name="no_activities">Sem actividades</string>
 </resources>

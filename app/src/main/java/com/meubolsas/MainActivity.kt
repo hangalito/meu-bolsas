@@ -18,15 +18,15 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MeuBolsasTheme {
+            MeuBolsasTheme(dynamicColor = false) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     MeuBolsasApp(
-                        actionFavorite = { nameId ->
-                            val msg = getString(R.string.new_favorite, getString(nameId))
+                        actionFavorite = { name ->
+                            val msg = getString(R.string.new_favorite, name)
                             Toast.makeText(
                                 this, msg, Toast.LENGTH_LONG
                             ).show()

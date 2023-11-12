@@ -1,5 +1,6 @@
 package com.meubolsas.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,33 +38,36 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.meubolsas.R
 import com.meubolsas.model.Favorite
+import com.meubolsas.model.UserActivity
 import com.meubolsas.ui.theme.MeuBolsasTheme
 
 
 @Composable
 fun ProfileScreen(
     faves: List<Favorite>,
+    listOfActivity: List<UserActivity>,
     onItemDelete: (Favorite) -> Unit,
     modifier: Modifier = Modifier
 ) {
     var favorites by rememberSaveable { mutableStateOf(true) }
-    var history by rememberSaveable { mutableStateOf(false) }
+    var activities by rememberSaveable { mutableStateOf(false) }
 
     Column(modifier.fillMaxSize()) {
-        UserInfo(Modifier.height(200.dp))
+        UserInfo(modifier = Modifier.height(200.dp))
         Row {
             NavigationBar(windowInsets = WindowInsets.captionBar) {
                 NavigationBarItem(
                     selected = favorites,
                     onClick = {
                         favorites = true
-                        history = false
+                        activities = false
                     },
                     icon = {
                         Icon(
@@ -76,9 +80,9 @@ fun ProfileScreen(
                     enabled = true
                 )
                 NavigationBarItem(
-                    selected = history,
+                    selected = activities,
                     onClick = {
-                        history = true
+                        activities = true
                         favorites = false
                     },
                     icon = {
@@ -102,10 +106,70 @@ fun ProfileScreen(
                 ) {
                     ListOfFavorites(faves, onItemDelete = {
                         onItemDelete(it)
-                        history = true; favorites = false
-                        favorites = true; history = false
+                        activities = true; favorites = false
+                        favorites = true; activities = false
                     })
                 }
+            }
+
+            activities -> {
+                Column(
+                    Modifier
+                        .verticalScroll(rememberScrollState())
+                        .padding(bottom = 51.dp)
+                ) {
+                    ListOfActivities(activities = listOfActivity)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun UserInfo(
+    modifier: Modifier = Modifier,
+    fullName: String = "Bartolomeu Hangalo"
+) {
+    Card(shape = RectangleShape) {
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Card(
+                modifier = Modifier
+                    .size(120.dp)
+                    .padding(8.dp),
+                shape = RoundedCornerShape(50),
+                colors = CardDefaults.cardColors(containerColor = Color.White)
+            ) {
+                var initials = ""
+                fullName.split(" ").let {
+                    initials += it.first().first()
+                    initials += it.last().first()
+                }
+                Text(
+                    text = initials.uppercase(),
+                    style = MaterialTheme.typography.displayMedium,
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Cyan)
+                        .wrapContentSize(Alignment.Center)
+                )
+            }
+            Column(Modifier.wrapContentSize(Alignment.Center)) {
+                Text(
+                    text = fullName,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.titleLarge
+                )
+                Text(
+                    text = "bartolomeuhangalo1@gmail.com",
+                    style = MaterialTheme.typography.bodyMedium,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
             }
         }
     }
@@ -126,7 +190,7 @@ fun ListOfFavorites(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text(text = stringResource(it.title), modifier = Modifier.weight(4f))
+                        Text(text = it.title, modifier = Modifier.weight(4f))
                         IconButton(onClick = { onItemDelete(it) }) {
                             Icon(imageVector = Icons.Rounded.Delete, contentDescription = null)
                         }
@@ -146,32 +210,42 @@ fun ListOfFavorites(
     }
 }
 
+
 @Composable
-fun UserInfo(modifier: Modifier = Modifier) {
-    Card(shape = RectangleShape) {
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Card(
-                modifier = Modifier
-                    .size(120.dp)
-                    .padding(8.dp),
-                shape = RoundedCornerShape(50),
-                colors = CardDefaults.cardColors(containerColor = Color.White)
-            ) {}
-            Column(Modifier.wrapContentSize(Alignment.Center)) {
-                Text(
-                    text = "Bartolomeu Hangalo",
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.titleLarge
-                )
-                Text(
-                    text = "bartolomeuhangalo1@gmail.com",
-                    style = MaterialTheme.typography.bodyMedium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+fun ListOfActivities(
+    activities: List<UserActivity>,
+    modifier: Modifier = Modifier
+) {
+    if (activities.isEmpty()) {
+        Text(
+            text = stringResource(id = R.string.no_activities),
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.Center)
+        )
+    } else {
+        Card(modifier.fillMaxWidth()) {
+            for (it in activities) {
+                Card(modifier = Modifier.padding(horizontal = 15.dp, vertical = 4.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = it.action,
+                            style = MaterialTheme.typography.labelLarge,
+                            modifier = Modifier.weight(3.5f)
+                        )
+                        Text(
+                            text = it.date,
+                            style = MaterialTheme.typography.labelSmall,
+                            modifier = Modifier.weight(1.5f)
+                        )
+                    }
+                    Divider()
+                }
             }
         }
     }
@@ -182,5 +256,6 @@ fun UserInfo(modifier: Modifier = Modifier) {
 @Composable
 fun ProfilePreview() {
     MeuBolsasTheme {
+        ListOfActivities(activities = listOf())
     }
 }

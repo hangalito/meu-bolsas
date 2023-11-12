@@ -63,8 +63,11 @@ string brand
 string bw
 string color
 string cream
+string fav_added
+string fav_removed
 string marron
 string new_favorite
+string no_activities
 string none
 string nothing_saved
 string our_bags

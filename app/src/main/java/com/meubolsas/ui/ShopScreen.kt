@@ -42,10 +42,11 @@ import java.text.DecimalFormat
 @Composable
 fun BagInfo(
     bag: Bag,
-    onActionFavorite: (Bag) -> Unit,
+    onActionFavorite: (String) -> Unit,
     onActionShare: (Bag) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val bagName = stringResource(id = bag.name)
     Column(modifier.fillMaxSize()) {
         Box(
             modifier = Modifier
@@ -61,7 +62,7 @@ fun BagInfo(
                     .align(Alignment.Center)
             )
             Row(modifier = Modifier.align(Alignment.BottomEnd)) {
-                IconButton(onClick = { onActionFavorite(bag) }) {
+                IconButton(onClick = { onActionFavorite(bagName) }) {
                     Icon(
                         imageVector = Icons.Rounded.Favorite,
                         contentDescription = null,
