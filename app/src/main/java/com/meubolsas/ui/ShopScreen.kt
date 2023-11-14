@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Favorite
+import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material3.Card
@@ -44,6 +45,7 @@ fun BagInfo(
     bag: Bag,
     onActionFavorite: (String) -> Unit,
     onActionShare: (Bag) -> Unit,
+    fav: Boolean,
     modifier: Modifier = Modifier
 ) {
     val bagName = stringResource(id = bag.name)
@@ -64,7 +66,11 @@ fun BagInfo(
             Row(modifier = Modifier.align(Alignment.BottomEnd)) {
                 IconButton(onClick = { onActionFavorite(bagName) }) {
                     Icon(
-                        imageVector = Icons.Rounded.Favorite,
+                        imageVector = if (fav) {
+                            Icons.Rounded.Favorite
+                        } else {
+                            Icons.Rounded.FavoriteBorder
+                        },
                         contentDescription = null,
                         tint = Color.Red
                     )
@@ -163,6 +169,6 @@ fun detailColor(color: BagColor): Int {
 @Composable
 fun ShopScreenPreview() {
     MeuBolsasTheme(darkTheme = true) {
-        BagInfo(onActionFavorite = {}, onActionShare = {}, bag = Bags.bags()[9])
+        BagInfo(onActionFavorite = {}, onActionShare = {}, bag = Bags.bags()[9], fav = false)
     }
 }

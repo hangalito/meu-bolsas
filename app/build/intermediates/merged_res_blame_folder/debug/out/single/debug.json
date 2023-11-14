@@ -1,174 +1,174 @@
 [
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_2.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_2.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_16.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_16.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_16.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_16.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_20.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_20.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_5.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_5.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_14.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_14.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_9.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_9.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_18.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_18.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable_ic_activity.xml.flat",
-        "source": "com.meubolsas.app-main-46:/drawable/ic_activity.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_7.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_7.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_18.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_18.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.meubolsas.app-main-47:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_4.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_4.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_1.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_1.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
-        "source": "com.meubolsas.app-main-46:/xml/data_extraction_rules.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_20.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_20.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_7.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_7.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_19.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_19.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_11.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_11.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_19.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_19.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/xml_data_extraction_rules.xml.flat",
+        "source": "com.meubolsas.app-main-47:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_14.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_14.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_8.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_8.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_11.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_11.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_21.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_21.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_3.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_3.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_3.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_3.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_1.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_1.png"
+        "merged": "com.meubolsas.app-merged_res-45:/xml_backup_rules.xml.flat",
+        "source": "com.meubolsas.app-main-47:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_17.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_17.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_4.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_4.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.meubolsas.app-main-47:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_17.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_17.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.meubolsas.app-main-46:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/xml_backup_rules.xml.flat",
-        "source": "com.meubolsas.app-main-46:/xml/backup_rules.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_21.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_21.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_13.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_13.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_13.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_13.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_5.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_5.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_6.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_6.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_6.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_6.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_12.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_12.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable_ic_activity.xml.flat",
+        "source": "com.meubolsas.app-main-47:/drawable/ic_activity.xml"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.meubolsas.app-main-46:/drawable/ic_launcher_background.xml"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_9.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_9.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_12.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_12.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_10.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_10.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_2.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_2.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_15.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_15.png"
+        "merged": "com.meubolsas.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.meubolsas.app-main-47:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/drawable-nodpi_bag_8.png.flat",
-        "source": "com.meubolsas.app-main-46:/drawable-nodpi/bag_8.png"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_10.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_10.png"
     },
     {
-        "merged": "com.meubolsas.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.meubolsas.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.meubolsas.app-merged_res-45:/drawable-nodpi_bag_15.png.flat",
+        "source": "com.meubolsas.app-main-47:/drawable-nodpi/bag_15.png"
     }
 ]

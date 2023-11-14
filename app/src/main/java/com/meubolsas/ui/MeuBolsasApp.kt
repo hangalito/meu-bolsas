@@ -64,7 +64,7 @@ fun MeuBolsasApp(
     val bags = rememberSaveable { Bags.bags().shuffled() }
     val suggestions = rememberSaveable { Bags.suggestions() }
     var selectedBag: Bag? by rememberSaveable { mutableStateOf(null) }
-    val favorites = rememberSaveable { mutableListOf<Favorite>() }
+    val favorites = rememberSaveable { mutableSetOf<Favorite>() }
     val userActivities = rememberSaveable { mutableListOf<UserActivity>() }
 
     Box(modifier = modifier.fillMaxSize()) {
@@ -98,6 +98,14 @@ fun MeuBolsasApp(
                 }
 
                 shop -> {
+                    val name = selectedBag?.let { stringResource(id = it.name) } ?: ""
+                    var fav = false
+                    favorites.forEach {
+                        if (it.title == name) {
+                            fav = true
+                            return@forEach
+                        }
+                    }
                     if (selectedBag != null) {
                         val msg = selectedBag?.name?.let {
                             stringResource(
@@ -107,7 +115,9 @@ fun MeuBolsasApp(
                         }
                         BagInfo(
                             bag = selectedBag!!,
-                            onActionFavorite = { name ->
+                            onActionFavorite = { title ->
+                                shop = false
+                                shop = true
                                 val now = java.time.LocalTime.now()
                                 val time = String.format(
                                     Locale.getDefault(),
@@ -116,13 +126,14 @@ fun MeuBolsasApp(
                                 val calendar = Calendar.getInstance()
                                 val currentDateTime = calendar.timeInMillis
                                 val simpleDateFormat =
-                                    SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault())
+                                    SimpleDateFormat("dd-MM-yyyy hh:mm", Locale.getDefault())
                                 val formattedString = simpleDateFormat.format(currentDateTime)
-                                actionFavorite(name)
-                                favorites.add(Favorite(name, time))
+                                actionFavorite(title)
+                                favorites.add(Favorite(title, time))
                                 userActivities.add(UserActivity(msg!!, formattedString))
                             },
-                            onActionShare = { sel -> actionShare(sel) }
+                            onActionShare = { sel -> actionShare(sel) },
+                            fav = fav
                         )
                     } else {
                         Column(
@@ -165,7 +176,7 @@ fun MeuBolsasApp(
                 profile -> {
                     Column(modifier = Modifier.fillMaxSize()) {
                         ProfileScreen(
-                            faves = favorites,
+                            faves = favorites.toList(),
                             listOfActivity = userActivities,
                             onItemDelete = { fave -> favorites.remove(fave) })
                     }

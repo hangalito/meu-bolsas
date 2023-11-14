@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.meubolsas.app-mergeDebugResources-42:/values-hr/values-hr.xml",
+            "outputFile": "com.meubolsas.app-mergeDebugResources-43:/values-hr/values-hr.xml",
             "map": [
                 {
                     "source": "/home/bartolomeu/.gradle/caches/transforms-3/2447b8c1cd37cd6eb78717eafe9863a5/transformed/core-1.12.0/res/values-hr/values-hr.xml",

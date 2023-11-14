@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.meubolsas.app-mergeDebugResources-42:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.meubolsas.app-mergeDebugResources-43:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/bartolomeu/.gradle/caches/transforms-3/204c071f5ceffafadb1af5c4278ef5cc/transformed/ui-1.4.0/res/values-zh-rHK/values-zh-rHK.xml",

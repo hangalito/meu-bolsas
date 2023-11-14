@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.meubolsas"
     android:versionCode="2"
-    android:versionName="2.4.3" >
+    android:versionName="2.4.5" >
 
     <uses-sdk
         android:minSdkVersion="28"
