@@ -3,7 +3,7 @@
     <string name="welcome_title">Bem Vindo à Meu Bolsas</string>
     <string name="welcome_message">Somos o seu balcão único para todas as coisas de bolsas. Se você está procurando uma bolsa nova para o dia a dia, uma bolsa para ocasiões especiais ou uma bolsa de viagem, temos a bolsa perfeita para você. Oferecemos uma grande variedade de bolsas das principais marcas e oferecemos ótimas ofertas em todas as nossas bolsas.Compre nossa promoção de bolsas hoje e economize até 50%</string>
     <string name="suggestions">Sugestões</string>
-    <string name="new_favorite">Bolsa %s adicionada aos favoritos</string>
+    <string name="new_favorite">Bolsa %s adicionada à lista de desejo.</string>
     <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %s no Meu Bolsas</string>
     <string name="share_title">Partilhar bolsa</string>
     <string name="wish_List">Lista de desejo</string>

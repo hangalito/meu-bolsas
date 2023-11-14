@@ -104,7 +104,7 @@ fun ProfileScreen(
                         .verticalScroll(rememberScrollState())
                         .padding(bottom = 51.dp)
                 ) {
-                    ListOfFavorites(faves, onItemDelete = {
+                    ListOfFavorites(faves.reversed(), onItemDelete = {
                         onItemDelete(it)
                         activities = true; favorites = false
                         favorites = true; activities = false
@@ -118,7 +118,7 @@ fun ProfileScreen(
                         .verticalScroll(rememberScrollState())
                         .padding(bottom = 51.dp)
                 ) {
-                    ListOfActivities(activities = listOfActivity)
+                    ListOfActivities(activities = listOfActivity.reversed())
                 }
             }
         }
@@ -154,7 +154,7 @@ fun UserInfo(
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Color.Cyan)
+                        .background(MaterialTheme.colorScheme.surfaceTint)
                         .wrapContentSize(Alignment.Center)
                 )
             }
@@ -183,15 +183,15 @@ fun ListOfFavorites(
 ) {
     if (faves.isNotEmpty()) {
         Card(modifier.fillMaxWidth()) {
-            for (it in faves) {
+            for (fave in faves) {
                 Card(modifier = Modifier.padding(horizontal = 15.dp, vertical = 4.dp)) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text(text = it.title, modifier = Modifier.weight(4f))
-                        IconButton(onClick = { onItemDelete(it) }) {
+                        Text(text = fave.title, modifier = Modifier.weight(4f))
+                        IconButton(onClick = { onItemDelete(fave) }) {
                             Icon(imageVector = Icons.Rounded.Delete, contentDescription = null)
                         }
                     }
@@ -256,6 +256,6 @@ fun ListOfActivities(
 @Composable
 fun ProfilePreview() {
     MeuBolsasTheme {
-        ListOfActivities(activities = listOf())
+        ProfileScreen(faves = listOf(), listOfActivity = listOf(), onItemDelete = {})
     }
 }

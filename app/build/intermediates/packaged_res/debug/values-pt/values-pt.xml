@@ -32,7 +32,7 @@
     <string name="fav_added">%s adicionada à lista de desejo.</string>
     <string name="fav_removed">%s removida da lista de desejo.</string>
     <string name="marron">Castanha</string>
-    <string name="new_favorite">Bolsa %s adicionada aos favoritos</string>
+    <string name="new_favorite">Bolsa %s adicionada à lista de desejo.</string>
     <string name="no_activities">Sem actividades</string>
     <string name="none">N/A</string>
     <string name="nothing_saved">Sem itens.</string>

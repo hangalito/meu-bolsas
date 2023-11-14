@@ -39,7 +39,7 @@
     <string name="fav_added">%s added to wishlist.</string>
     <string name="fav_removed">%s removed from wishlist.</string>
     <string name="marron">Marron</string>
-    <string name="new_favorite">Bag %s added to favorites</string>
+    <string name="new_favorite">Bag %s added to wishlist</string>
     <string name="no_activities">No activities.</string>
     <string name="none">N/A</string>
     <string name="nothing_saved">No items.</string>
