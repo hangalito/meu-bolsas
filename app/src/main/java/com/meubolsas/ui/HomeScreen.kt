@@ -1,6 +1,7 @@
 package com.meubolsas.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +26,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -157,15 +160,25 @@ fun HomeBags(
                         painter = painterResource(id = bag.image),
                         contentDescription = null,
                         modifier = Modifier
+                            .padding(8.dp)
+                            .shadow(elevation = 4.dp)
+                            .background(Color.White)
                             .fillMaxWidth()
                             .wrapContentWidth(Alignment.CenterHorizontally)
-                            .size(270.dp),
+                            .size(240.dp),
                         contentScale = ContentScale.Fit
                     )
                     Text(
                         text = stringResource(bag.name),
                         style = MaterialTheme.typography.labelMedium,
-                        modifier = Modifier.padding(horizontal = 4.dp)
+                        modifier = Modifier.padding(horizontal = 8.dp)
+                    )
+                    Text(
+                        text = currency(bag.price.toDouble()),
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier
+                            .padding(horizontal = 8.dp)
+                            .align(Alignment.End)
                     )
                 }
             }
