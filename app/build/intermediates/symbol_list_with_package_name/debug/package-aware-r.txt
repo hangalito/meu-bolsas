@@ -243,9 +243,11 @@ string dropdown_menu
 string expanded
 string fav_added
 string fav_removed
+string home
 string in_progress
 string indeterminate
 string marron
+string me
 string navigation_menu
 string new_favorite
 string no_activities
@@ -263,13 +265,13 @@ string red
 string selected
 string share_bag
 string share_title
+string shop
 string status_bar_notification_info_overflow
 string suggestions
 string switch_role
 string tab
 string template_percent
 string time_saved
-string welcome_message
 string welcome_title
 string white
 string wish_List

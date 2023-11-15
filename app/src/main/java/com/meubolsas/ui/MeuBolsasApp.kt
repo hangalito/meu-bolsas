@@ -270,7 +270,8 @@ fun MeuBolsasApp(
                     modifier = Modifier.fillMaxWidth()
 
                 ) {
-                    ToggleNavButton(title = "Home",
+                    ToggleNavButton(
+                        title = stringResource(R.string.home),
                         checked = home,
                         icon = Icons.Filled.Home,
                         onCheckChange = {
@@ -278,7 +279,8 @@ fun MeuBolsasApp(
                             shop = false
                             profile = false
                         })
-                    ToggleNavButton(title = "Shop",
+                    ToggleNavButton(
+                        title = stringResource(R.string.shop),
                         checked = shop,
                         icon = Icons.Filled.ShoppingCart,
                         onCheckChange = {
@@ -287,7 +289,8 @@ fun MeuBolsasApp(
                             home = false
 
                         })
-                    ToggleNavButton(title = "Me",
+                    ToggleNavButton(
+                        title = stringResource(R.string.me),
                         checked = profile,
                         icon = Icons.Filled.Person,
                         onCheckChange = {
@@ -330,7 +333,7 @@ fun ToggleNavButton(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true,device= "id:3.7in WVGA (Nexus One)")
 @Composable
 fun MeuBolsasScreenPreview() {
     MeuBolsasTheme(darkTheme = true) {
