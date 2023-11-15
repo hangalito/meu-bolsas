@@ -4,20 +4,22 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedFilterChip
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,10 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.meubolsas.R
 import com.meubolsas.data.Bags
 import com.meubolsas.model.Bag
 import com.meubolsas.ui.theme.MeuBolsasTheme
@@ -37,57 +37,97 @@ import com.meubolsas.ui.theme.MeuBolsasTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HighlightBags(
-    onBagClick: (Bag) -> Unit,
-    bags: List<Bag>,
+fun FilterRow(
+    balenciagaState: Boolean,
+    balenciagaClick: () -> Unit,
+    chanelState: Boolean,
+    chanelClick: () -> Unit,
+    diorState: Boolean,
+    diorClick: () -> Unit,
+    gucciState: Boolean,
+    gucciClick: () -> Unit,
+    lvState: Boolean,
+    lvClick: () -> Unit,
+    mickeyState: Boolean,
+    mickeyClick: () -> Unit,
+    royalState: Boolean,
+    royalClick: () -> Unit,
+    yslState: Boolean,
+    yslClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    val elevation = FilterChipDefaults.elevatedFilterChipElevation(defaultElevation = 8.dp)
+    val icon = Icons.Rounded.Check
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = modifier
     ) {
-        Text(
-            text = stringResource(R.string.suggestions),
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(8.dp)
-        )
-        LazyRow(
-            modifier = Modifier.padding(vertical = 12.dp, horizontal = 4.dp),
-        ) {
-            items(bags) {
-                Card(
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .size(width = 150.dp, height = 160.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
-                    elevation = CardDefaults.cardElevation(
-                        defaultElevation = 4.dp,
-                        pressedElevation = (-1).dp,
-                    ),
-                    onClick = { onBagClick(it) }
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .wrapContentSize(Alignment.Center)
-                    ) {
-                        Image(
-                            painter = painterResource(it.image),
-                            contentDescription = null,
-                            contentScale = ContentScale.Crop
-                        )
-                        Text(
-                            text = stringResource(it.name),
-                            style = MaterialTheme.typography.labelSmall,
-                            modifier = Modifier.padding(8.dp),
-                            textAlign = TextAlign.Center
-                        )
-                    }
+        ElevatedFilterChip(
+            selected = balenciagaState,
+            onClick = { balenciagaClick() },
+            label = { Text("Balenciaga") }, elevation = elevation, leadingIcon = {
+                if (balenciagaState) {
+                    Icon(imageVector = icon, contentDescription = null)
                 }
-            }
-        }
+            })
+        ElevatedFilterChip(
+            selected = chanelState,
+            onClick = { chanelClick() },
+            label = { Text("Chanel") }, elevation = elevation, leadingIcon = {
+                if (chanelState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = diorState,
+            onClick = { diorClick() },
+            label = { Text("Christian Dior") }, elevation = elevation, leadingIcon = {
+                if (diorState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = gucciState,
+            onClick = { gucciClick() },
+            label = { Text("Gucci") }, elevation = elevation, leadingIcon = {
+                if (gucciState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = lvState,
+            onClick = { lvClick() },
+            label = { Text("Louis Vuitton") }, elevation = elevation, leadingIcon = {
+                if (lvState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = mickeyState,
+            onClick = { mickeyClick() },
+            label = { Text("Mickey Mouse") }, elevation = elevation, leadingIcon = {
+                if (mickeyState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = royalState,
+            onClick = { royalClick() },
+            label = { Text("Royal Paste") }, elevation = elevation, leadingIcon = {
+                if (royalState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
+        ElevatedFilterChip(
+            selected = yslState,
+            onClick = { yslClick() },
+            label = { Text("YSL") }, elevation = elevation, leadingIcon = {
+                if (yslState) {
+                    Icon(imageVector = icon, contentDescription = null)
+                }
+            })
     }
 }
 

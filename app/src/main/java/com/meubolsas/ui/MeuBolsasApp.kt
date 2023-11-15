@@ -2,6 +2,7 @@ package com.meubolsas.ui
 
 import android.icu.text.SimpleDateFormat
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -59,11 +60,52 @@ fun MeuBolsasApp(
     var home by rememberSaveable { mutableStateOf(true) }
     var shop by rememberSaveable { mutableStateOf(false) }
     var profile by rememberSaveable { mutableStateOf(false) }
-    val bags = rememberSaveable { Bags.bags().shuffled() }
-    val suggestions = rememberSaveable { Bags.suggestions() }
+
+    var bags = rememberSaveable { Bags.bags().shuffled() }
+    val bags2 = mutableListOf<Bag>()
+
     var selectedBag: Bag? by rememberSaveable { mutableStateOf(null) }
     val favorites = rememberSaveable { mutableListOf<Favorite>() }
     val userActivities = rememberSaveable { mutableListOf<UserActivity>() }
+    val brands: MutableSet<String> = mutableSetOf()
+    bags.forEach { brands.add(it.brand!!) }
+
+    var baleen by rememberSaveable { mutableStateOf(false) }
+    if (baleen) {
+        bags2 += bags.filter { it.brand!! == "Balenciaga" }.toMutableList()
+    }
+    var chanel by rememberSaveable { mutableStateOf(false) }
+    if (chanel) {
+        bags2 += bags.filter { it.brand!! == "Chanel" }.toMutableList()
+    }
+    var dior by rememberSaveable { mutableStateOf(false) }
+    if (dior) {
+        bags2 += bags.filter { it.brand!! == "Dior" }.toMutableList()
+    }
+    var gucci by rememberSaveable { mutableStateOf(false) }
+    if (gucci) {
+        bags2 += bags.filter { it.brand!! == "Gucci" }.toMutableList()
+    }
+    var lv by rememberSaveable { mutableStateOf(false) }
+    if (lv) {
+        bags2 += bags.filter { it.brand!! == "Louis Vuitton" }.toMutableList()
+    }
+    var mickey by rememberSaveable { mutableStateOf(false) }
+    if (mickey) {
+        bags2 += bags.filter { it.brand!! == "Mickey" }.toMutableList()
+    }
+    var rp by rememberSaveable { mutableStateOf(false) }
+    if (rp) {
+        bags2 += bags.filter { it.brand!! == "Royal Paste" }.toMutableList()
+    }
+    var ysl by rememberSaveable { mutableStateOf(false) }
+    if (ysl) {
+        bags2 += bags.filter { it.brand!! == "YSL" }.toMutableList()
+    }
+
+    if (bags2.isNotEmpty()) {
+        bags = bags2.toList()
+    }
 
     Box(modifier = modifier.fillMaxSize()) {
         val bottomPadding = 50.dp
@@ -76,11 +118,27 @@ fun MeuBolsasApp(
                             .verticalScroll(rememberScrollState())
                             .padding(bottom = bottomPadding)
                     ) {
-                        HighlightBags(bags = suggestions, onBagClick = { bag ->
-                            home = false
-                            shop = true
-                            selectedBag = bag
-                        })
+                        FilterRow(
+                            balenciagaState = baleen,
+                            balenciagaClick = { baleen = !baleen },
+                            chanelState = chanel,
+                            chanelClick = { chanel = !chanel },
+                            diorState = dior,
+                            diorClick = { dior = !dior },
+                            gucciState = gucci,
+                            gucciClick = { gucci = !gucci },
+                            lvState = lv,
+                            lvClick = { lv = !lv },
+                            mickeyState = mickey,
+                            mickeyClick = { mickey = !mickey },
+                            royalState = rp,
+                            royalClick = { rp = !rp },
+                            yslState = ysl,
+                            yslClick = { ysl = !ysl },
+                            modifier = Modifier
+                                .padding(horizontal = 4.dp)
+                                .horizontalScroll(rememberScrollState())
+                        )
                         HomeBags(bags = bags, onBagClick = { bag ->
                             home = false
                             shop = true
@@ -254,7 +312,7 @@ fun ToggleNavButton(
 @Preview(showBackground = true)
 @Composable
 fun MeuBolsasScreenPreview() {
-    MeuBolsasTheme {
+    MeuBolsasTheme(darkTheme = true) {
         MeuBolsasApp({}, {})
     }
 }
