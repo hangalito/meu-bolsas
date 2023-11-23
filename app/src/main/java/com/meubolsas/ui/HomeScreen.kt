@@ -59,7 +59,7 @@ fun FilterRow(
     yslClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val elevation = FilterChipDefaults.elevatedFilterChipElevation(defaultElevation = 8.dp)
+    val elevation = FilterChipDefaults.elevatedFilterChipElevation(defaultElevation = 4.dp)
     val icon = Icons.Rounded.Check
 
     Row(

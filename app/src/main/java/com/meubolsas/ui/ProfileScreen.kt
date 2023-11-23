@@ -12,9 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.Favorite
@@ -59,7 +57,7 @@ fun ProfileScreen(
     var favorites by rememberSaveable { mutableStateOf(true) }
     var activities by rememberSaveable { mutableStateOf(false) }
 
-    Column(modifier.fillMaxSize()) {
+    Column(modifier) {
         UserInfo(modifier = Modifier.height(200.dp))
         Row {
             NavigationBar(windowInsets = WindowInsets.captionBar) {
@@ -99,11 +97,7 @@ fun ProfileScreen(
         }
         when {
             favorites -> {
-                Column(
-                    Modifier
-                        .verticalScroll(rememberScrollState())
-                        .padding(bottom = 51.dp)
-                ) {
+                Column {
                     ListOfFavorites(faves.reversed(), onItemDelete = {
                         onItemDelete(it)
                         activities = true; favorites = false
@@ -113,11 +107,7 @@ fun ProfileScreen(
             }
 
             activities -> {
-                Column(
-                    Modifier
-                        .verticalScroll(rememberScrollState())
-                        .padding(bottom = 51.dp)
-                ) {
+                Column {
                     ListOfActivities(activities = listOfActivity.reversed())
                 }
             }
@@ -200,13 +190,13 @@ fun ListOfFavorites(
             }
         }
     } else {
-        Text(
-            text = stringResource(id = R.string.nothing_saved),
-            style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
-        )
+        Column(Modifier.fillMaxWidth()) {
+            Text(
+                text = stringResource(id = R.string.nothing_saved),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+        }
     }
 }
 
@@ -217,13 +207,14 @@ fun ListOfActivities(
     modifier: Modifier = Modifier
 ) {
     if (activities.isEmpty()) {
-        Text(
-            text = stringResource(id = R.string.no_activities),
-            style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.Center)
-        )
+        Column(Modifier.fillMaxWidth()) {
+            Text(
+                text = stringResource(id = R.string.no_activities),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+            )
+        }
     } else {
         Card(modifier.fillMaxWidth()) {
             for (it in activities) {

@@ -37,6 +37,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -109,16 +110,20 @@ fun MeuBolsasApp(
         bags = bags2.toList()
     }
 
-    Scaffold(
-        topBar = {
+    Scaffold(topBar = {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RectangleShape,
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        ) {
             Text(
                 stringResource(R.string.app_name),
                 style = MaterialTheme.typography.headlineMedium,
                 fontFamily = FontFamily.Cursive,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(all=8.dp)
             )
         }
-    ) { paddings ->
+    }) { paddings ->
         Box(
             modifier = modifier
                 .padding(top = paddings.calculateTopPadding())
@@ -155,13 +160,11 @@ fun MeuBolsasApp(
                                     .padding(horizontal = 4.dp)
                                     .horizontalScroll(rememberScrollState())
                             )
-                            HomeBags(bags = bags,
-                                onBagClick = { bag ->
-                                    home = false
-                                    shop = true
-                                    selectedBag = bag
-                                }
-                            )
+                            HomeBags(bags = bags, onBagClick = { bag ->
+                                home = false
+                                shop = true
+                                selectedBag = bag
+                            })
                         }
                     }
 
@@ -180,22 +183,29 @@ fun MeuBolsasApp(
                                     R.string.fav_added, stringResource(id = it)
                                 )
                             }
-                            BagInfo(bag = selectedBag!!, onActionFavorite = { title ->
-                                shop = false
-                                shop = true
-                                val now = java.time.LocalTime.now()
-                                val time = String.format(
-                                    Locale.getDefault(),
-                                    "${now.hour}:${now.minute}:${now.second}"
-                                )
-                                val currentDateTime = Calendar.getInstance().timeInMillis
-                                val simpleDateFormat =
-                                    SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
-                                val formattedString = simpleDateFormat.format(currentDateTime)
-                                actionFavorite(title)
-                                favorites.add(Favorite(title, time))
-                                userActivities.add(UserActivity(msg!!, formattedString))
-                            }, onActionShare = { sel -> actionShare(sel) }, fav = fav
+                            BagInfo(
+                                bag = selectedBag!!,
+                                onActionFavorite = { title ->
+                                    shop = false
+                                    shop = true
+                                    val now = java.time.LocalTime.now()
+                                    val time = String.format(
+                                        Locale.getDefault(),
+                                        "${now.hour}:${now.minute}:${now.second}"
+                                    )
+                                    val currentDateTime = Calendar.getInstance().timeInMillis
+                                    val simpleDateFormat =
+                                        SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+                                    val formattedString = simpleDateFormat.format(currentDateTime)
+                                    actionFavorite(title)
+                                    favorites.add(Favorite(title, time))
+                                    userActivities.add(UserActivity(msg!!, formattedString))
+                                },
+                                onActionShare = { sel -> actionShare(sel) },
+                                fav = fav,
+                                modifier = Modifier
+                                    .verticalScroll(rememberScrollState())
+                                    .padding(bottom = bottomPadding)
                             )
                         } else {
                             Column(
@@ -234,12 +244,15 @@ fun MeuBolsasApp(
                     }
 
                     profile -> {
-                        Column(modifier = Modifier.fillMaxSize()) {
-                            val action = stringResource(
-                                R.string.fav_removed,
-                                selectedBag?.name?.let { stringResource(it) } ?: "N/A"
-                            )
-                            ProfileScreen(faves = favorites,
+                        Column(
+                            modifier = Modifier
+                                .verticalScroll(rememberScrollState())
+                                .padding(bottom = bottomPadding)
+                        ) {
+                            val action = stringResource(R.string.fav_removed,
+                                selectedBag?.name?.let { stringResource(it) } ?: "N/A")
+                            ProfileScreen(
+                                faves = favorites,
                                 listOfActivity = userActivities,
                                 onItemDelete = { fave ->
                                     favorites.remove(fave)
@@ -250,16 +263,18 @@ fun MeuBolsasApp(
                                     userActivities.add(
                                         UserActivity(action, formattedString)
                                     )
-                                })
+                                }
+                            )
                         }
                     }
                 }
             }
             Card(
-                shape = RoundedCornerShape(20),
+                shape = RoundedCornerShape(37),
                 colors = CardDefaults.cardColors(
                     containerColor = MaterialTheme.colorScheme.tertiaryContainer
                 ),
+                elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
                 modifier = Modifier
                     .fillMaxHeight()
                     .wrapContentSize(Alignment.BottomCenter)
@@ -270,8 +285,7 @@ fun MeuBolsasApp(
                     modifier = Modifier.fillMaxWidth()
 
                 ) {
-                    ToggleNavButton(
-                        title = stringResource(R.string.home),
+                    ToggleNavButton(title = stringResource(R.string.home),
                         checked = home,
                         icon = Icons.Filled.Home,
                         onCheckChange = {
@@ -279,8 +293,7 @@ fun MeuBolsasApp(
                             shop = false
                             profile = false
                         })
-                    ToggleNavButton(
-                        title = stringResource(R.string.shop),
+                    ToggleNavButton(title = stringResource(R.string.shop),
                         checked = shop,
                         icon = Icons.Filled.ShoppingCart,
                         onCheckChange = {
@@ -289,8 +302,7 @@ fun MeuBolsasApp(
                             home = false
 
                         })
-                    ToggleNavButton(
-                        title = stringResource(R.string.me),
+                    ToggleNavButton(title = stringResource(R.string.me),
                         checked = profile,
                         icon = Icons.Filled.Person,
                         onCheckChange = {
@@ -333,7 +345,7 @@ fun ToggleNavButton(
     }
 }
 
-@Preview(showBackground = true,device= "id:3.7in WVGA (Nexus One)")
+@Preview(showBackground = true, device = "id:pixel_7_pro")
 @Composable
 fun MeuBolsasScreenPreview() {
     MeuBolsasTheme(darkTheme = true) {
