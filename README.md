@@ -1,2 +1,7 @@
-# meu-bolsas
-# meu-bolsas
+Meu Bolsas App
+=================================
+
+Meu Bolsas is a prototype of a handbag e-commerce
+of company Meu Bolsas.
+--------------
+
