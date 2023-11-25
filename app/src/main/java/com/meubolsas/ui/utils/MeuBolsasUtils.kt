@@ -14,6 +14,8 @@ import com.meubolsas.data.locals.YSL
 import com.meubolsas.model.BagColor
 import com.meubolsas.ui.MeuBolsasUiState
 import java.text.DecimalFormat
+import java.time.LocalDateTime
+import java.util.Locale
 
 /** This enum class is used to help  filter the bags on
  * the home screen. */
@@ -74,4 +76,17 @@ fun setAppBarTitle(context: Context, uiState: State<MeuBolsasUiState>): String {
         uiState.value.isShowingUserProfile -> resources.getString(R.string.me)
         else -> resources.getString(R.string.app_name)
     }
+}
+
+fun getDateTime(): String {
+    val now = LocalDateTime.now()
+    return String.format(
+        Locale.getDefault(),
+        format = "%s %s %d %02d:%02d",
+        now.dayOfMonth,
+        now.month,
+        now.year,
+        now.hour,
+        now.minute
+    )
 }

@@ -8,13 +8,12 @@ import com.meubolsas.model.Bag
 import com.meubolsas.model.Favorite
 import com.meubolsas.model.UserActivity
 import com.meubolsas.ui.utils.FilterKey
+import com.meubolsas.ui.utils.getDateTime
 import com.meubolsas.ui.utils.getFilterValue
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import java.time.LocalDateTime
-import java.util.Locale
 
 class MeuBolsasViewModel : ViewModel() {
 
@@ -89,17 +88,6 @@ class MeuBolsasViewModel : ViewModel() {
     fun addToWishList(context: Context, bag: Bag) {
         val resources = context.resources
         val bagName = resources.getString(bag.name)
-
-        val now = LocalDateTime.now()
-        val date = String.format(
-            Locale.getDefault(),
-            format = "%s/%s/%d %02d:%02d",
-            now.dayOfMonth,
-            now.month,
-            now.year,
-            now.hour,
-            now.minute
-        )
         val currentWishList = _uiState.value.userWishList.toMutableList()
         val currentUserActivities = _uiState.value.userActivities.toMutableList()
         val newItem = Favorite(bag = bag)
@@ -110,7 +98,7 @@ class MeuBolsasViewModel : ViewModel() {
             currentUserActivities.add(
                 UserActivity(
                     action = resources.getString(R.string.fav_removed, bagName),
-                    date = date
+                    date = getDateTime()
                 )
             )
         } else {
@@ -119,7 +107,7 @@ class MeuBolsasViewModel : ViewModel() {
             currentUserActivities.add(
                 UserActivity(
                     action = resources.getString(R.string.fav_added, bagName),
-                    date = date
+                    date = getDateTime()
                 )
             )
         }
@@ -138,22 +126,12 @@ class MeuBolsasViewModel : ViewModel() {
         val currentUserActivity = _uiState.value.userActivities.toMutableList()
         val resources = context.resources
         val bagName = resources.getString(favorite.bag.name)
-        val now = LocalDateTime.now()
-        val date = String.format(
-            Locale.getDefault(),
-            format = "%s/%s/%d %02d:%02d",
-            now.dayOfMonth,
-            now.month,
-            now.year,
-            now.hour,
-            now.minute
-        )
 
         currentWihList.remove(favorite)
         currentUserActivity.add(
             UserActivity(
                 action = resources.getString(R.string.fav_removed, bagName),
-                date = date
+                date = getDateTime()
             )
         )
         _uiState.update { currentState ->
