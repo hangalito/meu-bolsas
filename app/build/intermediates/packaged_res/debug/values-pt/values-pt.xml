@@ -29,6 +29,7 @@
     <string name="bw">Branco e Preto</string>
     <string name="color">Cor</string>
     <string name="cream">Creme</string>
+    <string name="details">Detalhes da bolsa</string>
     <string name="fav_added">%s adicionada à lista de desejo.</string>
     <string name="fav_removed">%s removida da lista de desejo.</string>
     <string name="home">Início</string>

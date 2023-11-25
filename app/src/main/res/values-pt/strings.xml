@@ -11,6 +11,7 @@
     <string name="home">Início</string>
     <string name="shop">Loja</string>
     <string name="me">Eu</string>
+    <string name="details">Detalhes da bolsa</string>
 
     <!--  Nome das bolsas  -->
     <string name="bag_1">Balenciaga branca</string>

@@ -1,4 +1,4 @@
-package com.meubolsas.ui
+package com.meubolsas
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,20 +23,25 @@ import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.meubolsas.R
+import com.meubolsas.ui.BagDetail
+import com.meubolsas.ui.MeuBolsasHomeScreen
+import com.meubolsas.ui.MeuBolsasProfileScreen
+import com.meubolsas.ui.MeuBolsasViewModel
 import com.meubolsas.ui.theme.MeuBolsasTheme
+import com.meubolsas.ui.utils.setAppBarTitle
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,21 +50,22 @@ fun MeuBolsasApp(
     appViewModel: MeuBolsasViewModel = viewModel(),
 ) {
     val appUiState = appViewModel.uiState.collectAsState()
+    val context = LocalContext.current
 
-    Scaffold(topBar = {
-        Card(
-            modifier = Modifier.fillMaxWidth(),
-            shape = RectangleShape,
-            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-        ) {
-            Text(
-                stringResource(R.string.app_name),
-                style = MaterialTheme.typography.headlineMedium,
-                fontFamily = FontFamily.Cursive,
-                modifier = Modifier.padding(all = 8.dp)
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = setAppBarTitle(context = context, appUiState),
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontFamily = FontFamily.Cursive,
+                        modifier = Modifier.padding(all = 8.dp)
+                    )
+                },
             )
         }
-    }) { paddings ->
+    ) { paddings ->
         Box(
             modifier = Modifier
                 .padding(top = paddings.calculateTopPadding())

@@ -1,5 +1,7 @@
 package com.meubolsas.ui.utils
 
+import android.content.Context
+import androidx.compose.runtime.State
 import com.meubolsas.R
 import com.meubolsas.data.locals.BALENCIAGA
 import com.meubolsas.data.locals.CHANEL
@@ -10,6 +12,7 @@ import com.meubolsas.data.locals.MICKEY
 import com.meubolsas.data.locals.RP
 import com.meubolsas.data.locals.YSL
 import com.meubolsas.model.BagColor
+import com.meubolsas.ui.MeuBolsasUiState
 import java.text.DecimalFormat
 
 /** This enum class is used to help  filter the bags on
@@ -60,5 +63,15 @@ fun getFilterValue(filter: FilterKey): String {
         FilterKey.Mickey -> MICKEY
         FilterKey.RP -> RP
         FilterKey.YSL -> YSL
+    }
+}
+
+fun setAppBarTitle(context: Context, uiState: State<MeuBolsasUiState>): String {
+    val resources = context.resources
+    return when {
+        uiState.value.isShowingHome -> resources.getString(R.string.app_name)
+        uiState.value.isShowingBagDetails -> resources.getString(R.string.details)
+        uiState.value.isShowingUserProfile -> resources.getString(R.string.me)
+        else -> resources.getString(R.string.app_name)
     }
 }

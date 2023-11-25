@@ -64,6 +64,7 @@ string brand
 string bw
 string color
 string cream
+string details
 string fav_added
 string fav_removed
 string home

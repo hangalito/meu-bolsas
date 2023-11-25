@@ -37,6 +37,7 @@
     <string name="bw"><![CDATA[Black & White]]></string>
     <string name="color">Color</string>
     <string name="cream">Cream</string>
+    <string name="details">Bag details</string>
     <string name="fav_added">%s added to wishlist.</string>
     <string name="fav_removed">%s removed from wishlist.</string>
     <string name="home">Home</string>
