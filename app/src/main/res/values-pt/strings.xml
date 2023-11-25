@@ -2,8 +2,7 @@
     <string name="app_name">Meu Bolsas</string>
     <string name="welcome_title">Bem Vindo à Meu Bolsas</string>
     <string name="suggestions">Sugestões</string>
-    <string name="new_favorite">Bolsa %s adicionada à lista de desejo.</string>
-    <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %s no Meu Bolsas</string>
+    <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %d no Meu Bolsas</string>
     <string name="share_title">Partilhar bolsa</string>
     <string name="wish_List">Lista de desejo</string>
     <string name="activities">Actividades</string>

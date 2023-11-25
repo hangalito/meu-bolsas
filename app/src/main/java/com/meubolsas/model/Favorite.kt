@@ -1,6 +1,7 @@
 package com.meubolsas.model
 
+
+/** Single value data class that represent the [Bag]s the user has saved */
 data class Favorite(
-    val title: String,
-    val saved: String
+    val bag: Bag
 )

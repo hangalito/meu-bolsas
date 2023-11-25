@@ -7,6 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+dimen bottomPadding
 drawable bag_1
 drawable bag_10
 drawable bag_11
@@ -68,7 +69,6 @@ string fav_removed
 string home
 string marron
 string me
-string new_favorite
 string no_activities
 string none
 string nothing_saved
