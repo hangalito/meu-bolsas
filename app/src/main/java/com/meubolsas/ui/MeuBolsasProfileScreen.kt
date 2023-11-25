@@ -40,7 +40,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -144,49 +143,48 @@ private fun UserInfo(
     modifier: Modifier = Modifier,
     fullName: String = "Bartolomeu Hangalo"
 ) {
-    Card(shape = RectangleShape) {
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Card(
+            modifier = Modifier
+                .size(120.dp)
+                .padding(8.dp),
+            shape = RoundedCornerShape(50),
+            colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
-            Card(
+            var initials = ""
+            fullName.split(" ").let {
+                initials += it.first().first()
+                initials += it.last().first()
+            }
+            Text(
+                text = initials.uppercase(),
+                style = MaterialTheme.typography.displayMedium,
+                fontFamily = FontFamily.SansSerif,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .size(120.dp)
-                    .padding(8.dp),
-                shape = RoundedCornerShape(50),
-                colors = CardDefaults.cardColors(containerColor = Color.White)
-            ) {
-                var initials = ""
-                fullName.split(" ").let {
-                    initials += it.first().first()
-                    initials += it.last().first()
-                }
-                Text(
-                    text = initials.uppercase(),
-                    style = MaterialTheme.typography.displayMedium,
-                    fontFamily = FontFamily.SansSerif,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.surfaceTint)
-                        .wrapContentSize(Alignment.Center)
-                )
-            }
-            Column(Modifier.wrapContentSize(Alignment.Center)) {
-                Text(
-                    text = fullName,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.titleLarge
-                )
-                Text(
-                    text = "bartolomeuhangalo1@gmail.com",
-                    style = MaterialTheme.typography.bodyMedium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.surfaceTint)
+                    .wrapContentSize(Alignment.Center)
+            )
+        }
+        Column(Modifier.wrapContentSize(Alignment.Center)) {
+            Text(
+                text = fullName,
+                fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.titleLarge
+            )
+            Text(
+                text = "bartolomeuhangalo1@gmail.com",
+                style = MaterialTheme.typography.bodyMedium,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
         }
     }
+
 }
 
 @Composable
