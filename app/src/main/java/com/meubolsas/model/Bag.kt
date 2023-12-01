@@ -15,5 +15,5 @@ data class Bag(
     /** Hold a value from the enum class [BagColor] for the [color] */
     var color: BagColor,
     /** Hold the [price] of this [Bag]*/
-    var price: Int = 0,
+    var price: Number = 0,
 )

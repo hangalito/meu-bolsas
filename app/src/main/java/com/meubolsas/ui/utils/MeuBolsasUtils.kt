@@ -68,6 +68,8 @@ fun getFilterValue(filter: FilterKey): String {
     }
 }
 
+
+/** Set the app bar title dynamically according to current screen.*/
 fun setAppBarTitle(context: Context, uiState: State<MeuBolsasUiState>): String {
     val resources = context.resources
     return when {
@@ -78,6 +80,7 @@ fun setAppBarTitle(context: Context, uiState: State<MeuBolsasUiState>): String {
     }
 }
 
+/** Get the current date and time. */
 fun getDateTime(): String {
     val now = LocalDateTime.now()
     return String.format(

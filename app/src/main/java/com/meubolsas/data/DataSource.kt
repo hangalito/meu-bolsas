@@ -28,14 +28,14 @@ object DataSource {
                 image = R.drawable.bag_2,
                 name = R.string.bag_2,
                 color = BagColor.WHITE,
-                price = 14_399,
+                price = 14_499.99,
                 brand = LV
             ),
             Bag(
                 image = R.drawable.bag_3,
                 name = R.string.bag_3,
                 color = BagColor.PINK,
-                price = 10_000,
+                price = 9_999.99,
                 brand = CHANEL
             ),
             Bag(
@@ -49,28 +49,28 @@ object DataSource {
                 image = R.drawable.bag_5,
                 name = R.string.bag_5,
                 color = BagColor.WHITE,
-                price = 12_499,
+                price = 12_499.99,
                 brand = BALENCIAGA
             ),
             Bag(
                 image = R.drawable.bag_6,
                 name = R.string.bag_6,
                 color = BagColor.YELLOW,
-                price = 14_669,
+                price = 14_669.89,
                 brand = MICKEY
             ),
             Bag(
                 image = R.drawable.bag_7,
                 name = R.string.bag_7,
                 color = BagColor.YELLOW,
-                price = 8_299,
+                price = 8_299.99,
                 brand = YSL
             ),
             Bag(
                 image = R.drawable.bag_8,
                 name = R.string.bag_8,
                 color = BagColor.MARRON,
-                price = 13_399,
+                price = 13_699.99,
                 brand = GUCCI
             ),
             Bag(
@@ -98,7 +98,7 @@ object DataSource {
                 image = R.drawable.bag_12,
                 name = R.string.bag_12,
                 color = BagColor.PINK,
-                price = 8_999,
+                price = 8_999.99,
                 brand = CHANEL
             ),
             Bag(
@@ -133,28 +133,28 @@ object DataSource {
                 image = R.drawable.bag_17,
                 name = R.string.bag_17,
                 color = BagColor.MARRON,
-                price = 13_499,
+                price = 13_499.99,
                 brand = GUCCI
             ),
             Bag(
                 image = R.drawable.bag_18,
                 name = R.string.bag_18,
                 color = BagColor.BW,
-                price = 9_999,
+                price = 9_999.99,
                 brand = DIOR
             ),
             Bag(
                 image = R.drawable.bag_19,
                 name = R.string.bag_19,
                 color = BagColor.MARRON,
-                price = 8_799,
+                price = 8_799.99,
                 brand = CHANEL
             ),
             Bag(
                 image = R.drawable.bag_20,
                 name = R.string.bag_20,
                 color = BagColor.WHITE,
-                price = 14_599,
+                price = 14_599.99,
                 brand = LV
             ),
             Bag(
