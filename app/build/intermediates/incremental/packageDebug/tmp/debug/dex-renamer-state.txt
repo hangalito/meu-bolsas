@@ -1,4 +1,4 @@
-#Sun Dec 10 19:16:59 WAT 2023
+#Sun Dec 10 19:20:45 WAT 2023
 base.0=/home/bartolomeu/StudioProjects/MeuBolsas/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/bartolomeu/StudioProjects/MeuBolsas/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/bartolomeu/StudioProjects/MeuBolsas/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex

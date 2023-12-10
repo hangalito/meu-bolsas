@@ -12,8 +12,8 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilledIconToggleButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Scaffold
@@ -110,7 +110,7 @@ fun ToggleNavButton(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        IconToggleButton(
+        FilledIconToggleButton(
             checked = checked,
             onCheckedChange = { onCheckChange() },
         ) {
