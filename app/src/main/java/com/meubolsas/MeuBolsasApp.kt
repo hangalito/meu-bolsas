@@ -4,23 +4,18 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconToggleButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -66,33 +61,12 @@ fun MeuBolsasApp(
                 },
                 modifier = Modifier.shadow(elevation = 6.dp)
             )
-        }
-    ) { paddings ->
-        Box(
-            modifier = Modifier
-                .padding(top = paddings.calculateTopPadding())
-                .fillMaxSize()
-        ) {
-            Column {
-                MeuBolsasHomeScreen(appViewModel = appViewModel, uiState = appUiState)
-                BagDetail(viewModel = appViewModel, uiState = appUiState)
-                MeuBolsasProfileScreen(viewModel = appViewModel, uiState = appUiState)
-            }
-            Card(
-                shape = RoundedCornerShape(37),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.tertiaryContainer
-                ),
-                elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .wrapContentSize(Alignment.BottomCenter)
-                    .padding(horizontal = 12.dp, vertical = 8.dp)
-            ) {
+        },
+        bottomBar = {
+            NavigationBar {
                 Row(
                     horizontalArrangement = Arrangement.SpaceAround,
                     modifier = Modifier.fillMaxWidth()
-
                 ) {
                     ToggleNavButton(title = stringResource(R.string.home),
                         checked = appUiState.value.isShowingHome,
@@ -108,6 +82,18 @@ fun MeuBolsasApp(
                         onCheckChange = { appViewModel.navigateToUserProfile() })
                 }
             }
+        },
+    ) { paddings ->
+        Box(
+            modifier = Modifier
+                .padding(top = paddings.calculateTopPadding())
+                .fillMaxSize()
+        ) {
+            Column {
+                MeuBolsasHomeScreen(appViewModel = appViewModel, uiState = appUiState)
+                BagDetail(viewModel = appViewModel, uiState = appUiState)
+                MeuBolsasProfileScreen(viewModel = appViewModel, uiState = appUiState)
+            }
         }
     }
 }
@@ -118,18 +104,15 @@ fun ToggleNavButton(
     checked: Boolean,
     icon: ImageVector,
     onCheckChange: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = modifier
-            .padding(4.dp)
-            .size(37.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         IconToggleButton(
             checked = checked,
             onCheckedChange = { onCheckChange() },
-            modifier = Modifier.size(21.dp)
         ) {
             Icon(imageVector = icon, contentDescription = null)
         }
