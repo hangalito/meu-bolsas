@@ -33,7 +33,7 @@ enum class FilterKey {
 
 /** Function that takes a double value and returns a string
  *  formatted with the local currency. */
-fun formatCurrency(value: Double): String {
+fun formatCurrency(value: Number): String {
     val formatter = DecimalFormat.getCurrencyInstance()
     return formatter.format(value)
 }
