@@ -84,13 +84,17 @@ class MeuBolsasViewModel : ViewModel() {
     }
 
 
-    /** Add a new item in the wish list]. */
-    fun addToWishList(context: Context, bag: Bag) {
+    /**
+     * Add a new item in the wish list and returns true rather
+     * the item have been added to wish list or false otherwise.
+     * */
+    fun addToWishList(context: Context, bag: Bag): Boolean {
         val resources = context.resources
         val bagName = resources.getString(bag.name)
         val currentWishList = _uiState.value.userWishList.toMutableList()
         val currentUserActivities = _uiState.value.userActivities.toMutableList()
         val newItem = Favorite(bag = bag)
+        val added: Boolean
 
         if (currentWishList.contains(newItem)) {
             // Remove the item from the wish list and add a new user activity
@@ -101,6 +105,7 @@ class MeuBolsasViewModel : ViewModel() {
                     date = getDateTime()
                 )
             )
+            added = false
         } else {
             // Add the item in the wish list and add a new user activity
             currentWishList.add(newItem)
@@ -110,6 +115,7 @@ class MeuBolsasViewModel : ViewModel() {
                     date = getDateTime()
                 )
             )
+            added = true
         }
 
         _uiState.update { currentState ->
@@ -118,6 +124,7 @@ class MeuBolsasViewModel : ViewModel() {
                 userActivities = currentUserActivities.toList()
             )
         }
+        return added
     }
 
     /** Remove a given item from the wish list. */

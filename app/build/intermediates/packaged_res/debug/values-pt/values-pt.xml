@@ -42,7 +42,7 @@
     <string name="pink">Cor-de-rosa</string>
     <string name="price">Preço</string>
     <string name="red">Vermelha</string>
-    <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %d no Meu Bolsas</string>
+    <string name="share_bag">Encontrei a bolsa %s de cor %s no preço de %s no Meu Bolsas</string>
     <string name="share_title">Partilhar bolsa</string>
     <string name="shop">Loja</string>
     <string name="suggestions">Sugestões</string>

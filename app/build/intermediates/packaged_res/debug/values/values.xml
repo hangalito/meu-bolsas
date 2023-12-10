@@ -50,7 +50,7 @@
     <string name="pink">Pink</string>
     <string name="price">Price</string>
     <string name="red">Red</string>
-    <string name="share_bag">Found bag %s color %s at price of %d on Meu Bolsas</string>
+    <string name="share_bag">Found bag %s color %s at price of %s on Meu Bolsas</string>
     <string name="share_title">Share bag</string>
     <string name="shop">Shop</string>
     <string name="suggestions">Suggestions</string>

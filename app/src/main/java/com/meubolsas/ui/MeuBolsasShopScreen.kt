@@ -2,6 +2,7 @@ package com.meubolsas.ui
 
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -56,7 +57,7 @@ import com.meubolsas.ui.utils.formatCurrency
 fun BagDetail(
     viewModel: MeuBolsasViewModel,
     uiState: State<MeuBolsasUiState>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     BackHandler {
         viewModel.navigateToHome()
@@ -91,7 +92,7 @@ fun BagDetail(
                 )
                 Row(modifier = Modifier.align(Alignment.BottomEnd)) {
                     IconButton(
-                        onClick = { viewModel.addToWishList(context, currentBag) }) {
+                        onClick = { addToWishList(context, viewModel, currentBag) }) {
                         Icon(
                             imageVector = icon,
                             contentDescription = null,
@@ -175,7 +176,12 @@ private fun shareContent(context: Context, bag: Bag) {
     val resources = context.resources
     val bagName = resources.getString(bag.name)
     val bagColor = resources.getString(detailColor(bag.color))
-    val msg = resources.getString(R.string.share_bag, bagName, bagColor, bag.price)
+    val msg = resources.getString(
+        R.string.share_bag,
+        bagName,
+        bagColor,
+        formatCurrency(bag.price)
+    )
     val title = resources.getString(R.string.share_title)
 
     val intent = Intent(Intent.ACTION_SEND).apply {
@@ -186,6 +192,26 @@ private fun shareContent(context: Context, bag: Bag) {
     context.startActivity(
         Intent.createChooser(intent, title)
     )
+}
+
+private fun addToWishList(
+    context: Context,
+    viewModel: MeuBolsasViewModel,
+    bag: Bag,
+) {
+    context.let {
+        val added = viewModel.addToWishList(it, bag)
+        val name = it.getString(bag.name)
+        val msg = if (added) {
+            it.getString(
+                R.string.fav_added,
+                name
+            )
+        } else {
+            it.getString(R.string.fav_removed, name)
+        }
+        Toast.makeText(it, msg, Toast.LENGTH_LONG).show()
+    }
 }
 
 
