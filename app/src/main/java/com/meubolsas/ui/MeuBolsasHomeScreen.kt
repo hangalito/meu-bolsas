@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Check
@@ -54,15 +55,16 @@ import com.meubolsas.ui.utils.formatCurrency
 fun MeuBolsasHomeScreen(
     appViewModel: MeuBolsasViewModel,
     uiState: State<MeuBolsasUiState>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
+    val listState = rememberLazyListState()
 
     AnimatedVisibility(visible = uiState.value.isShowingHome) {
         Column(
             modifier = modifier
                 .fillMaxSize()
         ) {
-            LazyColumn {
+            LazyColumn(state = listState) {
                 item {
                     FilterRow(
                         balenciagaState = uiState.value.filterState[FilterKey.Balenciaga]!!,
@@ -151,7 +153,7 @@ fun FilterRow(
     royalClick: () -> Unit,
     yslState: Boolean,
     yslClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val elevation = FilterChipDefaults.elevatedFilterChipElevation(defaultElevation = 4.dp)
     val checkIcon = Icons.Rounded.Check
