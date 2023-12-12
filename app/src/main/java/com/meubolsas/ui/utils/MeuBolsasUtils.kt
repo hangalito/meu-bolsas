@@ -85,9 +85,9 @@ fun getDateTime(): String {
     val now = LocalDateTime.now()
     return String.format(
         Locale.getDefault(),
-        format = "%s %s %d %02d:%02d",
+        format = "%s/%s/%d %02d:%02d",
         now.dayOfMonth,
-        now.month,
+        now.monthValue,
         now.year,
         now.hour,
         now.minute
