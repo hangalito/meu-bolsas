@@ -32,13 +32,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.meubolsas.R
 import com.meubolsas.data.locals.BALENCIAGA
 import com.meubolsas.data.locals.CHANEL
 import com.meubolsas.data.locals.DIOR
@@ -63,7 +61,6 @@ fun MeuBolsasHomeScreen(
         Column(
             modifier = modifier
                 .fillMaxSize()
-                .padding(bottom = dimensionResource(id = R.dimen.bottomPadding))
         ) {
             LazyColumn {
                 item {

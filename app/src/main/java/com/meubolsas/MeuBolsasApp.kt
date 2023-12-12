@@ -86,7 +86,7 @@ fun MeuBolsasApp(
     ) { paddings ->
         Box(
             modifier = Modifier
-                .padding(top = paddings.calculateTopPadding())
+                .padding(paddings)
                 .fillMaxSize()
         ) {
             Column {
