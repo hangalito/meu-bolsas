@@ -1,8 +1,10 @@
 package com.meubolsas.ui
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -38,19 +40,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.meubolsas.data.locals.BALENCIAGA
-import com.meubolsas.data.locals.CHANEL
-import com.meubolsas.data.locals.DIOR
-import com.meubolsas.data.locals.GUCCI
-import com.meubolsas.data.locals.LV
-import com.meubolsas.data.locals.MICKEY
-import com.meubolsas.data.locals.RP
-import com.meubolsas.data.locals.YSL
+import com.meubolsas.data.Brands
 import com.meubolsas.ui.theme.MeuBolsasTheme
 import com.meubolsas.ui.utils.FilterKey
 import com.meubolsas.ui.utils.formatCurrency
+import com.meubolsas.ui.utils.getFilterKey
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MeuBolsasHomeScreen(
     appViewModel: MeuBolsasViewModel,
@@ -92,11 +88,16 @@ fun MeuBolsasHomeScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(4.dp),
-                        onClick = {
-                            appViewModel.selectBag(bag)
-                            appViewModel.navigateToBagDetails()
-                        }
+                            .padding(4.dp)
+                            .combinedClickable(
+                                onClick = {
+                                    appViewModel.selectBag(bag)
+                                    appViewModel.navigateToBagDetails()
+                                },
+                                onDoubleClick = {
+                                    appViewModel.filterBags(filter = getFilterKey(bag.brand))
+                                },
+                            ),
                     ) {
                         Column(
                             verticalArrangement = Arrangement.Bottom
@@ -166,67 +167,83 @@ fun FilterRow(
         ElevatedFilterChip(
             selected = balenciagaState,
             onClick = { balenciagaClick() },
-            label = { Text(BALENCIAGA) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.BALENCIAGA) }, elevation = elevation,
+            leadingIcon = {
                 if (balenciagaState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = chanelState,
             onClick = { chanelClick() },
-            label = { Text(CHANEL) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.CHANEL) }, elevation = elevation,
+            leadingIcon = {
                 if (chanelState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = diorState,
             onClick = { diorClick() },
-            label = { Text(DIOR) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.DIOR) }, elevation = elevation,
+            leadingIcon = {
                 if (diorState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = gucciState,
             onClick = { gucciClick() },
-            label = { Text(GUCCI) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.GUCCI) }, elevation = elevation,
+            leadingIcon = {
                 if (gucciState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = lvState,
             onClick = { lvClick() },
-            label = { Text(LV) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.LV) }, elevation = elevation,
+            leadingIcon = {
                 if (lvState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = mickeyState,
             onClick = { mickeyClick() },
-            label = { Text(MICKEY) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.MICKEY) }, elevation = elevation,
+            leadingIcon = {
                 if (mickeyState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = royalState,
             onClick = { royalClick() },
-            label = { Text(RP) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.RP) }, elevation = elevation,
+            leadingIcon = {
                 if (royalState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
         ElevatedFilterChip(
             selected = yslState,
             onClick = { yslClick() },
-            label = { Text(YSL) }, elevation = elevation, leadingIcon = {
+            label = { Text(Brands.YSL) }, elevation = elevation,
+            leadingIcon = {
                 if (yslState) {
                     Icon(imageVector = checkIcon, contentDescription = null)
                 }
-            })
+            },
+        )
     }
 }
 

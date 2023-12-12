@@ -3,14 +3,7 @@ package com.meubolsas.ui.utils
 import android.content.Context
 import androidx.compose.runtime.State
 import com.meubolsas.R
-import com.meubolsas.data.locals.BALENCIAGA
-import com.meubolsas.data.locals.CHANEL
-import com.meubolsas.data.locals.DIOR
-import com.meubolsas.data.locals.GUCCI
-import com.meubolsas.data.locals.LV
-import com.meubolsas.data.locals.MICKEY
-import com.meubolsas.data.locals.RP
-import com.meubolsas.data.locals.YSL
+import com.meubolsas.data.Brands
 import com.meubolsas.model.BagColor
 import com.meubolsas.ui.MeuBolsasUiState
 import java.text.DecimalFormat
@@ -28,6 +21,20 @@ enum class FilterKey {
     Mickey,
     RP,
     YSL
+}
+
+fun getFilterKey(brand: String): FilterKey {
+    return when (brand) {
+        Brands.BALENCIAGA -> FilterKey.Balenciaga
+        Brands.MICKEY -> FilterKey.Mickey
+        Brands.CHANEL -> FilterKey.Chanel
+        Brands.GUCCI -> FilterKey.Gucci
+        Brands.DIOR -> FilterKey.Dior
+        Brands.YSL -> FilterKey.YSL
+        Brands.RP -> FilterKey.RP
+        Brands.LV -> FilterKey.LV
+        else -> FilterKey.LV
+    }
 }
 
 
@@ -57,14 +64,14 @@ fun detailColor(color: BagColor): Int {
 
 fun getFilterValue(filter: FilterKey): String {
     return when (filter) {
-        FilterKey.Balenciaga -> BALENCIAGA
-        FilterKey.Chanel -> CHANEL
-        FilterKey.Dior -> DIOR
-        FilterKey.Gucci -> GUCCI
-        FilterKey.LV -> LV
-        FilterKey.Mickey -> MICKEY
-        FilterKey.RP -> RP
-        FilterKey.YSL -> YSL
+        FilterKey.Balenciaga -> Brands.BALENCIAGA
+        FilterKey.Chanel -> Brands.CHANEL
+        FilterKey.Dior -> Brands.DIOR
+        FilterKey.Gucci -> Brands.GUCCI
+        FilterKey.LV -> Brands.LV
+        FilterKey.Mickey -> Brands.MICKEY
+        FilterKey.RP -> Brands.RP
+        FilterKey.YSL -> Brands.YSL
     }
 }
 
